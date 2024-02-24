@@ -3,13 +3,23 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 --
---
+
+-- Soft line wrap
 vim.opt.relativenumber = true
 vim.opt.conceallevel = 2
 vim.opt.number = true
 vim.opt.textwidth = 0 vim.opt.wrapmargin = 0 vim.opt.wrap = true
 vim.opt.linebreak = true
 
+--
+local opts = {
+  cmd = { "ltex-ls" },
+  filetypes = { "markdown", "text" },
+  flags = { debounce_text_changes = 300 },
+}
+require("lvim.lsp.manager").setup("ltex", opts)
+
+-- Obsidian Plugin
 lvim.plugins = {
   "epwalsh/obsidian.nvim",
   version = "*",  -- recommended, use latest release instead of latest commit
@@ -80,6 +90,7 @@ lvim.builtin.which_key.mappings["o"] = {
   n = { "<cmd>ObsidianNew<cr>", "Add New Note" },
   va = { "<cmd>ObsidianFollowLink vsplit<cr>", "Add on vsplit" },
   s = { "<cmd>ObsidianSearch<cr>", "Search On Vault" },
+  e = { "<cmd> lua vim.diagnostic.open_float() <CR>", "Errors"}
   -- n = { "<cmd>Obsidian<cr>", "" },
   -- n = { "<cmd>Obsidian<cr>", "" },
   -- n = { "<cmd>Obsidian<cr>", "" },
