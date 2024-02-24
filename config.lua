@@ -72,3 +72,18 @@ lvim.plugins = {
   },
 }
 
+lvim.builtin.which_key.mappings["o"] = {
+  name = "Obsidian",
+  td = { "<cmd>ObsidianToday<cr>", "Open Daily Note" },
+  tp = { "<cmd>ObsidianTemplate<cr>", "Add Template" },
+  tg = { "<cmd>ObsidianTags<cr>", "Get Tags" },
+  n = { "<cmd>ObsidianNew<cr>", "Add New Note" },
+  va = { "<cmd>ObsidianFollowLink vsplit<cr>", "Add on vsplit" },
+  s = { "<cmd>ObsidianSearch<cr>", "Search On Vault" },
+  -- n = { "<cmd>Obsidian<cr>", "" },
+  -- n = { "<cmd>Obsidian<cr>", "" },
+  -- n = { "<cmd>Obsidian<cr>", "" },
+  -- n = { "<cmd>Obsidian<cr>", "" },
+  -- n = { "<cmd>Obsidian<cr>", "" },
+
+}
